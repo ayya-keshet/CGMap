@@ -121,8 +121,10 @@ class CGMPlot:
     def plot(self):
         self.prep_plot()
         self.plot_gluc()
-        self.plot_diet()
-        self.plot_sleep()
+        if self.diet_df is not None:
+            self.plot_diet()
+        if self.sleep_tuples is not None:
+            self.plot_sleep()
 
 
 class AGP:
